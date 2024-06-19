@@ -54,7 +54,7 @@ export const Button = forwardRef(
       onKeyDown?.(e);
     };
 
-    props.style = { ...props.style, width: `${children.length}ch` };
+    props.style = { ...props.style, width: `${children.length}ch`, cursor: 'pointer'  };
 
     props.className = `${props.className ?? ""} ${classes.button} ${
       active ? classes.active : ""

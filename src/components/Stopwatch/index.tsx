@@ -56,14 +56,19 @@ export const Stopwatch = () => {
     <>
       <Notification {...notification} />
 
-      <div className={classes.stopwatch}>
-        <Display started={started} elapsed={elapsed} />
-        <Controls
-          onToggle={() => dispatch({ type: "toggle" })}
-          onClear={() => dispatch({ type: "clear" })}
-          started={started}
-        />
+      <div className={classes.stopwatch} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div style={{ marginBottom: "10px" }}> {/* Time display row */}
+          <Display started={started} elapsed={elapsed} />
+        </div>
+        <div> {/* Buttons row */}
+          <Controls
+            onToggle={() => dispatch({ type: "toggle" })}
+            onClear={() => dispatch({ type: "clear" })}
+            started={started}
+          />
+        </div>
       </div>
+
     </>
   );
 };
